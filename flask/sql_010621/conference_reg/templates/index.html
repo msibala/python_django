@@ -1,0 +1,37 @@
+<h1>Reservation System</h1>
+<form action="/reserve" method="POST">
+    Name: <input type="text" name="name" value=""> 
+    {% with errors = get_flashed_messages(category_filter=["name"]) %}
+    {% if errors %}
+        {% for msg in errors %}
+            <p class="error">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    Email: <input type="text" name="email" value="">
+    {% with errors = get_flashed_messages(category_filter=["email"]) %}
+    {% if errors %}
+        {% for msg in errors %}
+            <p class="error">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %} 
+    Pin: <input type="text" name="pin" value="">
+    {% with errors = get_flashed_messages(category_filter=["pin"]) %}
+    {% if errors %}
+        {% for msg in errors %}
+        <p class="error">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <input type="submit" value="Reserve a seat" class="blue">
+</form>
+
+
+
+
+
+
+
+
+
